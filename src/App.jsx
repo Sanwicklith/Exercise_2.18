@@ -26,6 +26,10 @@ function App() {
     setCountryFilter(e.target.value);
   };
 
+  const handleClick = (name)=>{
+    setCountryFilter(name)
+  }
+
   const display = () => {
     console.log(filteredCountries.length);
     switch (filteredCountries.length) {
@@ -43,7 +47,7 @@ function App() {
       case 8:
       case 9:
       case 10:
-        return <Countries countries={filteredCountries} />;
+        return <Countries countries={filteredCountries} handleClick={handleClick}/>;
       default:
         return <p>Too many matches, specify another filter</p>;
     }
