@@ -1,8 +1,11 @@
-
-
-const Countries = ({ countries }) => {
+const Countries = ({ countries, handleClick }) => {
   return countries.map((country, i) => {
-    return <p key={i}>{country.name.common}</p>;
+    return (
+      <div key={i} style={{display:'flex'}} >
+        <p >{country.name.common}</p>
+        <button onClick={()=> handleClick(coun)}>Show</button>
+      </div>
+    );
   });
 };
 
